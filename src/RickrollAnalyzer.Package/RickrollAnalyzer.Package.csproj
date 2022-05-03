@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>RickrollAnalyzer</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>thinker227</Authors>
+    <PackageLicenseUrl>https://mit-license.org/</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/thinker227/RickrollAnalyzer</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>A Roslyn analyzer for warning about possible rickrolls.</Description>
+    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+    <Copyright>thinker227 2022</Copyright>
+    <PackageTags>rickroll, analyzers</PackageTags>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../RickrollAnalyzer.Analyzer/RickrollAnalyzer.Analyzer.csproj" />
+  </ItemGroup>
+
+</Project>
