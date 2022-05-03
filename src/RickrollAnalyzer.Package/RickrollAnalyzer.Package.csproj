@@ -20,11 +20,17 @@
     <PackageTags>rickroll, analyzers</PackageTags>
     <NoPackageAnalysis>true</NoPackageAnalysis>
 
-    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
+	<TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="../RickrollAnalyzer.Analyzer/RickrollAnalyzer.Analyzer.csproj" />
   </ItemGroup>
+
+  <Target Name="_AddAnalyzersToOutput">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)/RickrollAnalyzer.Analyzer.dll" PackagePath="analyzers/dotnet/cs" />
+    </ItemGroup>
+  </Target>
 
 </Project>
